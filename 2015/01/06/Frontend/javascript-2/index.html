@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="wilsonjax_t的流年祭"><title>JavaScript学习笔记(二) | wilsonjax_t</title><link rel="stylesheet" type="text/css" href="/css/normalize.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="/css/pure-min.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="/css/grids-responsive-min.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">JavaScript学习笔记(二)</h1><a id="logo" href="/.">wilsonjax_t</a><p class="description">坚持就是一天，又一天。你告诉自己，再坚持一天。</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">JavaScript学习笔记(二)</h1><div class="post-meta">Jan 6, 2015<span> | </span><span class="category"><a href="/categories/Study/">Study</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-disqus-identifier="2015/01/06/Frontend/javascript-2/" href="/2015/01/06/Frontend/javascript-2/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>大致学习一下<strong>JavaScript HTML DOM</strong>(<a href="http://www.jb51.net/w3school/htmldom/htmldom_reference.htm" target="_blank" rel="external">DOM参考手册</a>)<br>当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。</p>
-<p>###1. 简要介绍<br>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）如下图:</p>
+<h3 id="1-简要介绍"><a href="#1-简要介绍" class="headerlink" title="1. 简要介绍"></a>1. 简要介绍</h3><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）如下图:</p>
 <p><img src="/img/htmldom.jpg" alt="HTML DOM"></p>
 <blockquote>
 <p> 什么是 DOM？<br>   DOM 是 W3C（万维网联盟）的标准。<br>   DOM 定义了访问 HTML 和 XML 文档的标准：<br>   “W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。”<br>   W3C DOM 标准被分为 3 个不同的部分：</p>
@@ -53,7 +53,7 @@
 <li>nextSibling 返回给定节点的下一个子节点,如果无此节点,则该属性返回 null,用法:node.nextSibling</li>
 <li>previousSibling 返回给定节点的上一个子节点,类似nextSibling</li>
 </ol>
-<p>###2. DOM对象<br>  <strong>一些DOM对象方法</strong></p>
+<h3 id="2-DOM对象"><a href="#2-DOM对象" class="headerlink" title="2. DOM对象"></a>2. DOM对象</h3><p>  <strong>一些DOM对象方法</strong></p>
 <ol>
 <li>getElementById() 返回带有ID的元素</li>
 <li>getElementsByTagName() 返回包含带有指定标签名称的所有元素的节点列表(集合/节点数组)</li>
@@ -69,7 +69,7 @@
 <li>getAttribute()    返回指定的属性值,用法:nodeobj.getAttribute(属性名称)</li>
 <li>setAttribute() 把指定属性设置或修改为指定的值,用法:Node.setAttribute(name,value)</li>
 </ol>
-<p>###3.浏览器窗口可视区域大小<br>获得浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）的方法:<br>一、对于IE9+、Chrome、Firefox、Opera 以及 Safari：</p>
+<h3 id="3-浏览器窗口可视区域大小"><a href="#3-浏览器窗口可视区域大小" class="headerlink" title="3.浏览器窗口可视区域大小"></a>3.浏览器窗口可视区域大小</h3><p>获得浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）的方法:<br>一、对于IE9+、Chrome、Firefox、Opera 以及 Safari：</p>
 <ul>
 <li>window.innerHeight - 浏览器窗口的内部高度</li>
 <li>window.innerWidth - 浏览器窗口的内部宽度</li>
@@ -86,7 +86,7 @@
 </ul>
 <p>在不同浏览器都实用的 JavaScript 方案：<br>var w= document.documentElement.clientWidth<br>      || document.body.clientWidth;<br>var h= document.documentElement.clientHeight<br>      || document.body.clientHeight;</p>
 <p>类似的还有scrollHeight,scrollWidth,offsetHeight,offsetWidth</p>
-</div><a data-url="http://wilsonjuxta.github.io/2015/01/06/Frontend/javascript-2/" data-id="cikwiux9g00byqfxrvx5176e0" class="article-share-link">分享到</a><div class="tags"><a href="/tags/JavaScript/">JavaScript</a></div><div class="post-nav"><a href="/2015/01/07/linuxproblem1/" class="pre">Ubuntu13.04 64位环境,安装完koala之后打开显示libudev.so.0无效</a><a href="/2015/01/06/Frontend/javascript-1/" class="next">JavaScript学习笔记(一)</a></div><div id="disqus_thread"><script>var disqus_shortname = 'Tamara';
+</div><a data-url="http://wilsonjuxta.github.io/2015/01/06/Frontend/javascript-2/" data-id="cil3co3u600byiaxr8yrhqkju" class="article-share-link">分享到</a><div class="tags"><a href="/tags/JavaScript/">JavaScript</a></div><div class="post-nav"><a href="/2015/01/07/linuxproblem1/" class="pre">Ubuntu13.04 64位环境,安装完koala之后打开显示libudev.so.0无效</a><a href="/2015/01/06/Frontend/javascript-1/" class="next">JavaScript学习笔记(一)</a></div><div id="disqus_thread"><script>var disqus_shortname = 'Tamara';
 var disqus_identifier = '2015/01/06/Frontend/javascript-2/';
 var disqus_title = 'JavaScript学习笔记(二)';
 var disqus_url = 'http://wilsonjuxta.github.io/2015/01/06/Frontend/javascript-2/';
